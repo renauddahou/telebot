@@ -1,9 +1,12 @@
 from Adafruit_IO import Client
 from telegram.ext import Updater,MessageHandler,Filters
-#for light
-aio = Client('uvi', 'aio_ZICP79KyZzG7QHt85ISRYRQUsPn9')
-#for fan
-aio1 = Client('uvi', 'aio_ZICP79KyZzG7QHt85ISRYRQUsPn9')
+import os
+
+feed_key = os.getenv('feed_key')
+
+aio = Client('uvi', feed_key)  #for light
+
+aio1 = Client('uvi', feed_key)  #for fan
 
 light_on = ["turn on the light","turn on light","lights on","light on","its dark here","on the light"]
 light_off = ["turn off the light","turn off light","lights off","light off"]
@@ -51,7 +54,7 @@ def main(bot,update):
   elif a in fan_off:
     fanoff(bot,update)
 
-BOT_TOKEN ='1881536487:AAHZl0cEN2S8kFZfHQNVRGcW6ptAvQ8Ejnk'
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 up = Updater(BOT_TOKEN,use_context=True)
 dp = up.dispatcher
 dp.add_handler(MessageHandler(Filters.text,main))
