@@ -16,11 +16,9 @@ fan_off = ["turn off the fan","turn off fan","fan off","off the fan"]
 
 def ledon(bot,update):
   chat_id = bot.message.chat_id
-  path='https://cdn3.vectorstock.com/i/1000x1000/52/87/abstract-lightbulb-vector-955287.jpg'
   animation_url = 'https://i.gifer.com/H90l.gif'
   bot.message.reply_text("Done,lights turned on!")
-  update.bot.sendPhoto(chat_id=chat_id,photo=path)
-  update.bot.sendAnimation(chat_id=chat_id,animation=animation_url)
+  update.bot.sendAnimation(chat_id=chat_id,animation=animation_url,duration=2)
   aio.send('led', 1)
   
 def ledoff(bot,update):
