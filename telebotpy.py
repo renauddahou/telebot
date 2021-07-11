@@ -16,30 +16,30 @@ fan_off = ["turn off the fan","turn off fan","fan off","off the fan"]
 
 def ledon(bot,update):
   chat_id = bot.message.chat_id
-  animation_url = 'https://i.gifer.com/H90l.gif'
+  animation_url = 'https://media.baamboozle.com/uploads/images/68811/1618179100_34871_gif-url.gif'
   bot.message.reply_text("Done,lights turned on!")
   update.bot.sendAnimation(chat_id=chat_id,animation=animation_url,duration=2)
   aio.send('led', 1)
   
 def ledoff(bot,update):
   chat_id = bot.message.chat_id
-  path='https://png.pngtree.com/png-vector/20201114/ourlarge/pngtree-line-draw-vector-light-bulb-abstract-continuous-line-drawing-png-image_2425961.jpg'
+  path='https://labblog.uofmhealth.org/sites/lab/files/2018-11/michigan-med-l-ocd-study.gif'
   bot.message.reply_text("Done,lights turned off!")
-  update.bot.sendPhoto(chat_id=chat_id,photo=path)
+  update.bot.sendAnimation(chat_id=chat_id,animation=path)
   aio.send('led', 0)
   
 def fanon(bot,update):
   chat_id = bot.message.chat_id
-  #path='https://image.shutterstock.com/image-vector/ok-hand-lettering-handmade-calligraphy-260nw-669965602.jpg'
+  path='https://mir-s3-cdn-cf.behance.net/project_modules/disp/bafb3929035897.55decb26f207b.gif'
   bot.message.reply_text("Done,fan turned on!")
-  #update.bot.sendPhoto(chat_id=chat_id,photo=path)
+  update.bot.sendAnimation(chat_id=chat_id,animation=path)
   aio1.send('fan', 1)
   
 def fanoff(bot,update):
   chat_id = bot.message.chat_id
-  #path='https://image.shutterstock.com/image-vector/ok-hand-lettering-handmade-calligraphy-260nw-669965602.jpg'
+  path='https://image.freepik.com/free-vector/cartoon-fan_60352-2875.jpg'
   bot.message.reply_text("Done,fan turned off!")
-  #update.bot.sendPhoto(chat_id=chat_id,photo=path)
+  update.bot.sendAnimation(chat_id=chat_id,animation=path)
   aio1.send('fan', 0)
 
 def main(bot,update):
