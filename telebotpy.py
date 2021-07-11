@@ -1,9 +1,9 @@
 from Adafruit_IO import Client
 from telegram.ext import Updater,MessageHandler,Filters
 #for light
-aio = Client('uvi', 'aio_BEcC14inYfnM8K2nHN9FKAWcQsbA')
+aio = Client('uvi', 'aio_ZICP79KyZzG7QHt85ISRYRQUsPn9')
 #for fan
-aio1 = Client('uvi', 'aio_BEcC14inYfnM8K2nHN9FKAWcQsbA')
+aio1 = Client('uvi', 'aio_ZICP79KyZzG7QHt85ISRYRQUsPn9')
 
 light_on = ["turn on the light","turn on light","lights on","light on","its dark here","on the light"]
 light_off = ["turn off the light","turn off light","lights off","light off"]
