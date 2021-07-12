@@ -48,13 +48,13 @@ def fanoff(bot,update):
   aio.send('fan', 0)
   
 def lightOnorOff(bot,update):
-  feedLight = aio.recieve('led')
+  feedLight = aio.receive('led')
   bot.message.reply_text(feedLight.value)
   print(feedLight.value)
   
     
 def fanOnorOff(bot,update):
-  feedFan = aio.recieve('fan')
+  feedFan = aio.receive('fan')
   bot.message.reply_text(feedFan.value)
   print(feedFan.value)
   
