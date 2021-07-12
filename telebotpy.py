@@ -5,7 +5,7 @@ import random
 feed_key = os.getenv('feed_key')
 
 aio = Client('uvi', feed_key)  #for light
-feedLight = aio.data('led')
+
 feedFan = aio.data('fan')
 
 
@@ -48,9 +48,9 @@ def fanoff(bot,update):
   aio.send('fan', 0)
   
 def lightOnorOff(bot,update):
-  val = feedLight.value
-  print(val)
-  bot.message.reply_text(val)
+  feedLight = aio.data('led')
+  for i in feedLight:
+    print(feedLight.value)
   
   
 def inval(bot,update):
