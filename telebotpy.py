@@ -48,14 +48,15 @@ def fanoff(bot,update):
   aio.send('fan', 0)
   
 def lightOnorOff(bot,update):
-  feedLight = aio.data('led')
-  for i in feedLight:
-    print(i.value)
+  feedLight = aio.recieve('led')
+  bot.message.reply_text(feedLight.value)
+  print(feedLight.value)
+  
     
 def fanOnorOff(bot,update):
-  feedFan = aio.data('fan')
-  for i in feedLight:
-    print(i.value)
+  feedFan = aio.recieve('fan')
+  bot.message.reply_text(feedFan.value)
+  print(feedFan.value)
   
   
 def inval(bot,update):
