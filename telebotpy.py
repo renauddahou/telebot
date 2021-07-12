@@ -53,7 +53,7 @@ def fanoff(bot,update):
 #to get the status of light
 def lightOnorOff(bot,update):
   feedLight = aio.receive('led')
-  if(feedLight.value==1):
+  if(feedLight.value=='1'):
     bot.message.reply_text("ON")
   else:
     bot.message.reply_text("OFF")
@@ -62,7 +62,7 @@ def lightOnorOff(bot,update):
 #get status of fan    
 def fanOnorOff(bot,update):
   feedFan = aio.receive('fan')
-  if(feedFan.value==1):
+  if(feedFan.value=='1'):
     bot.message.reply_text("ON")
   else:
     bot.message.reply_text("OFF")
