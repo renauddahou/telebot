@@ -41,12 +41,13 @@ def fanon(bot,update):
   
 def fanoff(bot,update):
   chat_id = bot.message.chat_id
-  path='https://pbs.twimg.com/media/DKamHGZUQAIkX4J.jpg'
-  bot.message.reply_text("Done,fan turned off!👍")
+  path='https://d1j8pt39hxlh3d.cloudfront.net/uploads/thumbs_up_sign_256_1.gif'
+  bot.message.reply_text("Done,fan turned off!")
   update.bot.sendAnimation(chat_id=chat_id,animation=path)
   aio1.send('fan', 0)
   
 def inval(bot,update):
+  
   bot.message.reply_text("Invalid command!")
 
 def greet(bot,update):
@@ -58,6 +59,8 @@ def about(bot,update):
 def fine(bot,update):
   mes = random.choice(finelist)
   bot.message.reply_text(mes)
+def ok(bot,update):
+  bot.message.reply_text("Okay!")
 
                          
 
@@ -78,6 +81,8 @@ def main(bot,update):
     about(bot,update)
   elif a in howlist:
     fine(bot,update)
+  elif a == "ok" or a=="okay":
+    ok(bot,update)
   else:
     inval(bot,update)
 
