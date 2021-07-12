@@ -8,7 +8,6 @@ aio = Client('uvi', feed_key)  #for light
 
 
 
-
 greeting = ["hi","hello","hey"]
 tay = ["what can you do","what will you do","say about yourself"]
 howlist = ["how are you"]
@@ -49,22 +48,29 @@ def fanoff(bot,update):
   
 def lightOnorOff(bot,update):
   feedLight = aio.receive('led')
-  bot.message.reply_text(feedLight.value)
+  if(feedLight.value==1):
+    bot.message.reply_text("ON")
+  else:
+    bot.message.reply_text("OFF")
   print(feedLight.value)
   
     
 def fanOnorOff(bot,update):
   feedFan = aio.receive('fan')
-  bot.message.reply_text(feedFan.value)
+  if(feedFan.value==1):
+    bot.message.reply_text("ON")
+  else:
+    bot.message.reply_text("OFF")
   print(feedFan.value)
   
   
-def inval(bot,update):
-  
+def inval(bot,update): 
   bot.message.reply_text("Invalid command!")
 
 def greet(bot,update):
-  bot.message.reply_text("👋Hi!")
+  bot.message.reply_text("👋Hi!.. You can give commands to turn on or off the light and fan and to get status of light and fan")
+  
+    
   
 def about(bot,update):
   bot.message.reply_text("I can turn on and off the light and fan for you")
@@ -72,6 +78,7 @@ def about(bot,update):
 def fine(bot,update):
   mes = random.choice(finelist)
   bot.message.reply_text(mes)
+
 def ok(bot,update):
   bot.message.reply_text("Okay!")
 
