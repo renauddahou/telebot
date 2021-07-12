@@ -1,7 +1,7 @@
 from Adafruit_IO import Client
 from telegram.ext import Updater,MessageHandler,Filters
 import os
-
+import random 
 feed_key = os.getenv('feed_key')
 
 aio = Client('uvi', feed_key)  #for light
