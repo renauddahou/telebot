@@ -6,7 +6,7 @@ feed_key = os.getenv('feed_key')
 
 aio = Client('uvi', feed_key)  #for light
 
-feedFan = aio.data('fan')
+
 
 
 greeting = ["hi","hello","hey"]
@@ -50,7 +50,12 @@ def fanoff(bot,update):
 def lightOnorOff(bot,update):
   feedLight = aio.data('led')
   for i in feedLight:
-    print(feedLight.value)
+    print(i.value)
+    
+def fanOnorOff(bot,update):
+  feedFan = aio.data('fan')
+  for i in feedLight:
+    print(i.value)
   
   
 def inval(bot,update):
@@ -92,6 +97,8 @@ def main(bot,update):
     ok(bot,update)
   elif a == "light status":
     lightOnorOff(bot,update)
+  elif a == "fan status":
+    fanOnorOff(bot,update)
   else:
     inval(bot,update)
 
