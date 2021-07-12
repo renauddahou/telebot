@@ -5,8 +5,9 @@ import random
 feed_key = os.getenv('feed_key')
 
 aio = Client('uvi', feed_key)  #for light
+feedLight = aio.feeds("led")
+feedFan = aio.feeds("fan")
 
-aio1 = Client('uvi', feed_key)  #for fan
 
 greeting = ["hi","hello","hey"]
 tay = ["what can you do","what will you do","say about yourself"]
@@ -37,14 +38,14 @@ def fanon(bot,update):
   path='https://mir-s3-cdn-cf.behance.net/project_modules/disp/bafb3929035897.55decb26f207b.gif'
   bot.message.reply_text("Done,fan turned on!✌")
   update.bot.sendAnimation(chat_id=chat_id,animation=path)
-  aio1.send('fan', 1)
+  aio.send('fan', 1)
   
 def fanoff(bot,update):
   chat_id = bot.message.chat_id
   path='https://d1j8pt39hxlh3d.cloudfront.net/uploads/thumbs_up_sign_256_1.gif'
   bot.message.reply_text("Done,fan turned off!")
   update.bot.sendAnimation(chat_id=chat_id,animation=path)
-  aio1.send('fan', 0)
+  aio.send('fan', 0)
   
 def inval(bot,update):
   
