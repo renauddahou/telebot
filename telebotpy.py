@@ -5,8 +5,8 @@ import random
 feed_key = os.getenv('feed_key')
 
 aio = Client('uvi', feed_key)  #for light
-feedLight = aio.feeds("led")
-feedFan = aio.feeds("fan")
+feedLight = aio.feeds('led')
+feedFan = aio.feeds('fan')
 
 
 greeting = ["hi","hello","hey"]
@@ -47,6 +47,11 @@ def fanoff(bot,update):
   update.bot.sendAnimation(chat_id=chat_id,animation=path)
   aio.send('fan', 0)
   
+def lightOnorOff(bot,update):
+  val = int(feedLight.value)
+  bot.message.reply_text(val)
+  
+  
 def inval(bot,update):
   
   bot.message.reply_text("Invalid command!")
@@ -84,6 +89,8 @@ def main(bot,update):
     fine(bot,update)
   elif a == "ok" or a=="okay":
     ok(bot,update)
+  elif a == "light status":
+    lightOnorOff(bot,update)
   else:
     inval(bot,update)
 
