@@ -116,7 +116,7 @@ def main(bot,update):
   else:
     inval(bot,update)
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('1890518768:AAEidn93bZoXoQOl6wJWawizl0iCZ4N3p2k')
 up = Updater(BOT_TOKEN,use_context=True)
 dp = up.dispatcher
 dp.add_handler(MessageHandler(Filters.text,main))
